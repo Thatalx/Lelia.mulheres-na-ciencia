@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lélia Gonzalez — Elas Também Programaram o Futuro</title>
+  <style>
+    :root {
+      --bg: #F8F2EF;
+      --primaria: #4A1726;
+      --secundaria: #713044;
+      --destaque: #9A6B55;
+      --texto: #2B1B1B;
+      --card: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--texto);
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, var(--primaria), #351521);
+      color: #fff;
+      text-align: center;
+      padding: 2.5rem 1rem;
+      border-bottom: 5px solid var(--destaque);
+    }
+    header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+    header p { font-size: 1rem; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+    main { max-width: 850px; margin: 2rem auto; padding: 0 1rem; }
+    section {
+      background: var(--card);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+    }
+    h2 {
+      color: var(--primaria);
+      border-left: 4px solid var(--secundaria);
+      padding-left: 0.75rem;
+      margin-bottom: 1rem;
+      font-size: 1.35rem;
+    }
+    .bio-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+    .bio-grid img {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 3px solid var(--destaque);
+    }
+    .bio-texto { flex: 1; min-width: 250px; }
+    .bio-texto p { margin-bottom: 0.85rem; }
+    .bio-texto p:last-child { margin-bottom: 0; }
+    .botoes-livros {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .btn {
+      display: inline-block;
+      background-color: var(--secundaria);
+      color: #fff;
+      text-decoration: none;
+      padding: 0.75rem 1.25rem;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    .btn:hover { background-color: var(--primaria); }
+    .mapa-img {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+    .apresentacao-box {
+      background: #F1E5E2;
+      border: 1px solid var(--destaque);
+      text-align: center;
+    }
+    /* Aba expansível do Mapeamento */
+    details {
+      background: #EFE2DE;
+      border: 1px solid var(--destaque);
+      border-radius: 8px;
+      padding: 1rem;
+    }
+    summary {
+      font-weight: bold;
+      color: var(--primaria);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "Ler mapeamento completo ▼";
+      background: var(--primaria);
+      color: #fff;
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+    details[open] summary::after { content: "Recolher texto ▲"; }
+    .conteudo-mapeamento {
+      margin-top: 1.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid #C8ADA2;
+    }
+    .conteudo-mapeamento h3 { color: var(--secundaria); margin: 1rem 0 0.5rem; font-size: 1.1rem; }
+    .conteudo-mapeamento ul { margin-left: 1.25rem; margin-bottom: 0.75rem; }
+    .conteudo-mapeamento li { margin-bottom: 0.4rem; }
+    /* Caixa de comentário dos criadores */
+    .relato-box {
+      background-color: var(--primaria);
+      color: #F8F2EF;
+      border-left: 6px solid var(--destaque);
+    }
+    .relato-box h2 { color: var(--destaque); border-color: var(--destaque); }
+    .relato-box ul { margin: 0.75rem 0 0.75rem 1.25rem; }
+    .relato-box li { margin-bottom: 0.5rem; }
+    .autor-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.12);
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      margin-bottom: 0.75rem;
+    }
+    /* Seção Kahoot */
+    .kahoot-box { text-align: center; border: 2px dashed var(--secundaria); }
+    .btn-kahoot { background-color: var(--primaria); font-size: 1.1rem; margin-top: 0.75rem; }
+    /* Seção Fontes */
+    .fontes-lista { margin-left: 1.25rem; }
+    .fontes-lista li { margin-bottom: 0.65rem; }
+    .fontes-lista a { color: var(--secundaria); font-weight: 600; text-decoration: none; }
+    .fontes-lista a:hover { text-decoration: underline; }
+    footer { text-align: center; padding: 1.5rem; font-size: 0.85rem; color: #666; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Lélia Gonzalez</h1>
+    <p>Pioneiras do Saber:Mulheres que transformaram a ciência e a tecnologia• Semana Acadêmica IFRJ</p>
+  </header>
+
+  <main>
+    <!-- BIOGRAFIA -->
+    <section>
+      <h2>Quem foi Lélia Gonzalez?</h2>
+      <div class="bio-grid">
+        <img src="IMG_931f5c72-6625-4ddc-bc18-56823b5496ff.jpg" alt="Retrato de Lélia Gonzalez, intelectual, filósofa e antropóloga negra brasileira">
+        <div class="bio-texto">
+          <p><strong>Lélia Gonzalez (1935–1994)</strong> foi uma das maiores intelectuais, filósofas, antropólogas, professoras e militantes do movimento negro e feminista no Brasil. Nascida em Belo Horizonte (MG) em uma família pobre e numerosa, mudou-se ainda criança para o Rio de Janeiro, onde superou barreiras sociais e raciais para se graduar em História e Filosofia, além de conquistar o mestrado em Comunicação e o doutorado em Antropologia Política. Como docente, destacou-se na Pontifícia Universidade Católica do Rio de Janeiro (PUC-Rio), onde chegou a chefiar o Departamento de Sociologia e Política.</p>
+          <p>Na militância política e social, Lélia teve papel decisivo na redemocratização do país, sendo uma das fundadoras do <strong>Movimento Negro Unificado (MNU)</strong>, do Instituto de Pesquisas das Culturas Negras (IPCN) e do <strong>Nzinga Coletivo de Mulheres Negras</strong>. Sua produção intelectual revolucionou o pensamento brasileiro ao analisar como o <strong>racismo e o sexismo</strong> operam juntos na marginalização das mulheres negras e ao desmontar o mito da "democracia racial".</p>
+          <p>Entre suas maiores contribuições teóricas estão os conceitos de <strong>Amefricanidade</strong> — que valoriza a experiência histórica e cultural comum de pessoas negras e indígenas nas Américas — e <strong>Pretuguês</strong>, termo que criou para reconhecer a influência decisiva das línguas africanas na formação do português falado no Brasil. Sua obra permanece como referência fundamental para a educação antirracista e os estudos de gênero e raça no mundo todo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LINKS DE LIVROS -->
+    <section>
+      <h2>Obras e Livros</h2>
+      <div class="botoes-livros">
+        <a href="https://www.skoob.com.br/pt/book/12128454?title=lugar-de-negro" target="_blank" class="btn">Lugar de Negro (1982)</a>
+        <a href="https://www.skoob.com.br/festas-populares-no-brasil-1232319ed11592837.html" target="_blank" class="btn">Festas Populares no Brasil (1987)</a>
+        <a href="https://www.skoob.com.br/pt/book/11590455?title=primavera-para-as-rosas-negras" target="_blank" class="btn">Primavera para as Rosas Negras (2018)</a>
+        <a href="https://www.skoob.com.br/pt/book/122551794" target="_blank" class="btn">Por um Feminismo Afro-Latino-Americano (2020)</a>
+        <a href="https://skoob.com.br" target="_blank" class="btn">Lélia Gonzalez – Alex Ratts e Flávia Rios (2010)</a>
+        <a href="https://www.skoob.com.br/pt/book/128746" target="_blank" class="btn">Gonzalez – Flávia Martins de Carvalho (2022)</a>
+      </div>
+    </section>
+
+    <!-- MAPA MENTAL -->
+    <section>
+      <h2>Mapa Mental</h2>
+      <img src="IMG-20261116-WA0096.jpg" alt="Mapa mental ilustrando os principais conceitos e contribuições de Lélia Gonzalez" class="mapa-img">
+    </section>
+
+    <!-- APRESENTAÇÃO DO PROJETO -->
+    <section class="apresentacao-box">
+      <h2>Apresentação do Projeto</h2>
+      <p>Quer assistir ao vídeo da nossa apresentação novamente? Confira abaixo:</p>
+      <a href="COLE_O_LINK_DO_VIDEO_AQUI" target="_blank" class="btn" style="margin-top: 0.75rem;">Assistir ao Vídeo da Apresentação</a>
+    </section>
+
+    <!-- MAPEAMENTO EXPANSÍVEL -->
+    <section>
+      <h2>Mapeamento: Mulheres Negras na Ciência Brasileira</h2>
+      <details>
+        <summary>
+          <span>Dificuldades de visibilidade, barreiras históricas e relação com Lélia Gonzalez</span>
+        </summary>
+        <div class="conteudo-mapeamento">
+          <p><strong>Ideia Central:</strong> A dificuldade de encontrar mulheres negras na ciência não significa que elas não tenham produzido conhecimento. Está relacionada às barreiras de acesso e permanência, à pouca divulgação e ao apagamento de suas contribuições.</p>
+
+          <h3>1. Dificuldade de encontrar mulheres negras na ciência</h3>
+          <p>A dificuldade de encontrar essas pesquisadoras não acontece porque elas não existam ou não produzam conhecimento. Ela está ligada à pouca divulgação de suas trajetórias e às desigualdades que limitam sua presença e seu reconhecimento.</p>
+          <ul>
+            <li><strong>Pouca divulgação de pesquisadoras negras:</strong> Muitas cientistas negras têm seus trabalhos divulgados em espaços restritos, como grupos acadêmicos ou eventos específicos.</li>
+            <li><strong>Baixa representatividade em universidades e instituições científicas:</strong> Quando há poucas mulheres negras entre professoras e dirigentes, estudantes têm menos referências.</li>
+            <li><strong>Pouca presença nos livros didáticos:</strong> Os materiais escolares costumam apresentar um número limitado de cientistas negras.</li>
+            <li><strong>Dificuldade de encontrar registros históricos:</strong> Documentos, pesquisas e relatos sobre essas mulheres podem estar dispersos ou pouco organizados.</li>
+            <li><strong>Falta de reconhecimento em diferentes áreas científicas:</strong> Algumas pesquisadoras recebem menos destaque, citações, prêmios ou oportunidades.</li>
+          </ul>
+
+          <h3>2. Falta de valorização de suas histórias</h3>
+          <ul>
+            <li><strong>Apagamento histórico das contribuições:</strong> Pesquisas e realizações de mulheres negras podem ser omitidas de livros e registros oficiais.</li>
+            <li><strong>Reconhecimento tardio de descobertas e pesquisas:</strong> Algumas pesquisadoras só recebem atenção muitos anos depois de realizar seus trabalhos.</li>
+            <li><strong>Maior valorização de cientistas homens e brancos:</strong> Cria a impressão equivocada de que apenas esses grupos foram responsáveis por grandes descobertas.</li>
+            <li><strong>Pouca divulgação na televisão, internet e outros meios:</strong> O público tem menos contato com suas histórias e realizações.</li>
+            <li><strong>Falta de reconhecimento para o Brasil:</strong> Pesquisas feitas por mulheres negras ajudam a desenvolver áreas como saúde, educação, tecnologia e ciências humanas.</li>
+          </ul>
+
+          <h3>3. Principais barreiras enfrentadas</h3>
+          <ul>
+            <li><strong>Racismo estrutural:</strong> Desigualdade racial presente nas estruturas da sociedade e das instituições.</li>
+            <li><strong>Machismo e discriminação de gênero:</strong> Receber menos crédito por ideias ou enfrentar dificuldades para ocupar liderança, combinado ao racismo.</li>
+            <li><strong>Desigualdade no acesso à educação:</strong> Diferenças de renda, qualidade da escola, acesso à internet e materiais.</li>
+            <li><strong>Dificuldade de acesso a bolsas e oportunidades de pesquisa:</strong> A distribuição desigual de recursos dificulta a continuidade dos estudos.</li>
+            <li><strong>Menor oportunidade de ocupar cargos de liderança científica:</strong> Barreiras para se tornarem coordenadoras ou líderes de grupos de pesquisa.</li>
+            <li><strong>Desigualdade de condições para permanecer na carreira:</strong> A necessidade de trabalhar e a falta de apoio financeiro tornam a permanência mais difícil.</li>
+          </ul>
+
+          <h3>4. Relação com Lélia Gonzalez</h3>
+          <ul>
+            <li><strong>Invisibilidade histórica da população negra:</strong> Lélia questionou a forma como a história brasileira esconde a participação negra na formação do país.</li>
+            <li><strong>Racismo e sexismo como fatores de exclusão:</strong> Uma mulher negra enfrenta preconceitos relacionados à raça e ao gênero ao mesmo tempo.</li>
+            <li><strong>Desvalorização da produção intelectual das mulheres negras:</strong> O pensamento de Lélia combate a ideia de que apenas grupos privilegiados produzem conhecimento importante.</li>
+            <li><strong>Reconhecimento como produtoras de conhecimento:</strong> Dar visibilidade às pesquisadoras negras e garantir que sejam reconhecidas na ciência brasileira.</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+    <!-- RELATO DOS AUTORES -->
+    <section class="relato-box">
+      <h2>Diário da Pesquisa: Os Algoritmos na Prática</h2>
+      <span class="autor-tag">Relato dos autores: Thavinny e Efrain </span>
+      <p>Durante a produção deste trabalho, vivenciamos na prática o viés algorítmico estudado na pesquisa:</p>
+      <ul>
+        <li><strong>Busca e Mapa Mental (Efraim):</strong> Mesmo pesquisando especificamente por "mulheres negras na ciência" no Google, os primeiros resultados ainda priorizaram mulheres brancas. Ao pedir para o ChatGPT gerar um mapa mental sobre Lélia Gonzalez, a IA ilustrou o material com mulheres brancas.</li>
+        <li><strong>Vídeo de Apresentação (Thavinny):</strong> Ao gerar o vídeo no Google Flow com um roteiro descrevendo uma menina negra e um menino pardo de cabelo crespo, a ferramenta ignorou a descrição e criou três pessoas brancas, loiras e de cabelo liso.</li>
+      </ul>
+    </section>
+
+    <!-- QUIZ KAHOOT -->
+    <section class="kahoot-box">
+      <h2>Quiz Interativo: Teste seus conhecimentos!</h2>
+      <p>Participe do nosso desafio sobre Lélia Gonzalez e mulheres negras na ciência.</p>
+      <a href="COLE_O_LINK_DO_KAHOOT_AQUI" class="btn btn-kahoot" target="_blank" rel="noopener noreferrer">Acessar kahoot</a>
+    </section>
+
+    <!-- FONTES E REFERÊNCIAS -->
+    <section>
+      <h2>Fontes e Referências</h2>
+      <ul class="fontes-lista">
+        <li><a href="https://www.blogs.unicamp.br/mulheresnafilosofia/lelia-gonzalez/" target="_blank">Enciclopédia Mulheres na Filosofia (UNICAMP)</a> — Verbete acadêmico sobre a biografia, obras e conceitos de Lélia Gonzalez.</li>
+        <li><a href="https://prefeitura.pbh.gov.br/cultura/ric/personalidades-negras/lelia-gonzalez" target="_blank">Portal da Prefeitura de Belo Horizonte</a> — Registro oficial na seção Personalidades Negras sobre a trajetória e o legado de Lélia Gonzalez.</li>
+        <li><a href="https://www.gov.br/mulheres/pt-br/central-de-conteudos/publicacoes/raseam" target="_blank">Relatório Anual Socioeconômico da Mulher (RASEAM 2025)</a> — Ministério das Mulheres: dados sobre a distribuição de bolsas de pesquisa por raça/cor.</li>
+        <li><a href="https://www.scielo.br/" target="_blank">SciELO Brasil</a> — Artigos científicos sobre desigualdades de gênero e raça na ciência brasileira e instituições de ensino superior.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    Projeto Ética na Informática • Semana Acadêmica IFRJ • Desenvolvido por Thavinny e Efrain
+  </footer>
+
+</body>
+</html>
